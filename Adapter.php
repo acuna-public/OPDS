@@ -2,31 +2,34 @@
   
   namespace OPDS;
   
-  abstract class Provider {
+  abstract class Adapter {
     
     public $proxies = [];
     
-    protected $cats = [], $pubs = [], $publication = [];
+    protected $items = [], $pubs = [], $publication = [];
     
-    abstract function getType (): string;
+    function getType (): string {
+      return 'text/json';
+    }
+    
     abstract function toString (): string;
     
     abstract function numberOfItems ($num);
     abstract function itemsPerPage ($num);
     abstract function currentPage ($num);
-    abstract function processCats ();
     abstract function setTitle ($title);
     abstract function getTitle ();
+    abstract function processCats ();
     
     final function addItem (array $item) {
-      $this->cats[] = $item;
+      $this->items[] = $item;
     }
     
-    final function addPublication (\OPDS\Book $item) {
+    final function addPublication (Book $item) {
       $this->pubs[] = $item;
     }
     
-    final function addFullPublication (\OPDS\Book $item) {
+    final function addFullPublication (Book $item) {
       $this->publication = $item;
     }
     

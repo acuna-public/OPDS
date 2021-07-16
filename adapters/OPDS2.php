@@ -1,18 +1,18 @@
 <?php
   
-  namespace OPDS\Provider;
+  namespace OPDS\Adapter;
   
-  class OPDS2 extends \OPDS\Provider {
+  class OPDS2 extends \OPDS\Adapter {
     
     public $content = ['metadata' => ['title' => '']];
     
     function processCats () {
       
-      if ($this->cats) {
+      if ($this->items) {
         
         $this->content['navigation'] = [];
         
-        foreach ($this->cats as $cat) {
+        foreach ($this->items as $cat) {
           
           $item = [
             
@@ -79,10 +79,6 @@
     
     function toString (): string {
       return array2json ($this->content);
-    }
-    
-    function getType (): string {
-      return 'text/json';
     }
     
   }

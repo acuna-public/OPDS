@@ -1,8 +1,8 @@
 <?php
   
-  namespace OPDS\Provider;
+  namespace OPDS\Adapter;
   
-  class OPDS1 extends \OPDS\Provider {
+  class OPDS1 extends \OPDS\Adapter {
     
     public $dom, $root;
     protected $title;
@@ -46,9 +46,9 @@
     
     function processCats () {
       
-      if ($this->cats) {
+      if ($this->items) {
         
-        foreach ($this->cats as $cat) {
+        foreach ($this->items as $cat) {
           
           $entry = $this->dom->createElement ('entry');
           
