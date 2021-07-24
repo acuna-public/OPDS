@@ -7,7 +7,7 @@
     public $data = ['links' => [], 'images' => []];
     protected $adapter;
     
-    function __construct (\OPDS\Adapter\OPDS1 $adapter) {
+    function __construct (\OPDS\Adapter $adapter) {
       $this->adapter = $adapter;
     }
     

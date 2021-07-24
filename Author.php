@@ -7,7 +7,7 @@
     public $data = ['links' => []];
     protected $provider;
     
-    function __construct (\OPDS\Provider $provider) {
+    function __construct (\OPDS\Adapter $provider) {
       $this->provider = $provider;
     }
     
