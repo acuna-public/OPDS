@@ -7,11 +7,11 @@
     public $dom, $entry;
     protected $title;
     
-    function __construct (\OPDS\Provider $provider) {
+    function __construct (\OPDS\Adapter\OPDS1 $adapter) {
       
-      parent::__construct ($provider);
+      parent::__construct ($adapter);
       
-      $this->dom = $this->provider->dom;
+      $this->dom = $this->adapter->dom;
       $this->entry = $this->dom->createElement ('entry');
       
     }
@@ -25,7 +25,7 @@
       if ($this->title)
         $this->entry->removeChild ($this->title);
       
-      $this->title = $this->provider->createTitle ($title);
+      $this->title = $this->adapter->createTitle ($title);
       $this->entry->appendChild ($this->title);
       
     }
