@@ -5,10 +5,10 @@
   abstract class Book {
     
     public $data = ['links' => [], 'images' => []];
-    protected $provider;
+    protected $adapter;
     
-    function __construct (\OPDS\Provider $provider) {
-      $this->provider = $provider;
+    function __construct (\OPDS\Adapter\OPDS1 $adapter) {
+      $this->adapter = $adapter;
     }
     
     abstract function setTitle ($title);
