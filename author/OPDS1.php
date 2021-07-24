@@ -6,7 +6,7 @@
     
     protected $dom, $entry;
     
-    function __construct (\OPDS\Provider $provider) {
+    function __construct (\OPDS\Adapter $provider) {
       
       parent::__construct ($provider);
       
