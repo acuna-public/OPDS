@@ -11,7 +11,7 @@
     
     abstract protected function getLang (): array;
     
-    protected function getConfig (array $data): array {
+    protected function getConf (array $data): array {
       return $data;
     }
     
@@ -22,7 +22,7 @@
       
       $this->param = set_items ($this->params, $_GET);
       
-      foreach ($this->getConfig (['charset' => 'utf-8']) as $key => $value)
+      foreach ($this->getConf (['charset' => 'utf-8']) as $key => $value)
         $this->config[$key] = $value;
       
       foreach ($this->params as $param)
