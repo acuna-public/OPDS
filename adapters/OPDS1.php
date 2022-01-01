@@ -38,6 +38,10 @@
       
       $this->root = $this->dom->appendChild ($this->root);
       
+      $entry = $this->dom->createElement ('id', 'tag:root');
+      
+      $this->root->appendChild ($entry);
+      
     }
     
     function createTitle ($title) {
@@ -121,7 +125,7 @@
     }
     
     function getType (): string {
-      return 'application/atom+xml';
+      return 'application/rss+xml';
     }
     
   }
