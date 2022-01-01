@@ -53,7 +53,7 @@
     }
     
     function createTitle ($title) {
-      return $this->dom->createElement ('title', htmlentities ($title, ENT_XML1));
+      return $this->dom->createElement ('title', trim (htmlentities ($title, ENT_XML1)));
     }
     
     function processCats () {
