@@ -125,7 +125,7 @@
     }
     
     function getType (): string {
-      return 'application/rss+xml';
+      return 'text/xml';
     }
     
   }
