@@ -121,7 +121,7 @@
     }
     
     function getType (): string {
-      return 'text/xml';
+      return 'application/atom+xml';
     }
     
   }

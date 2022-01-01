@@ -60,7 +60,7 @@
         $this->adapter->setTitle ($langs['en'][0]);
       }
       
-      @header ('Content-type:'.$this->adapter->getType ().'; Charset:'.$this->config['charset']);
+      @header ('Content-Type:'.$this->adapter->getType ().'; Charset:'.$this->config['charset']);
       
       return $this->adapter->toString ();
       
