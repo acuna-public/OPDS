@@ -99,7 +99,7 @@
       if ($this->title)
         $this->root->removeChild ($this->title);
       
-      $this->title = $this->createTitle ($title);
+      $this->title = $this->createTitle (trim ($title));
       $this->root->appendChild ($this->title);
       
     }
