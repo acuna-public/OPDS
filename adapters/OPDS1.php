@@ -36,11 +36,19 @@
         
       );
       
+      $this->root->setAttributeNS (
+        
+        'http://www.w3.org/2000/xmlns/', 
+        'xmlns:os',
+        'http://a9.com/-/spec/opensearch/1.1/',
+        
+      );
+      
       $this->root = $this->dom->appendChild ($this->root);
       
-      //$entry = $this->dom->createElement ('id', 'tag:root');
+      $entry = $this->dom->createElement ('id', 'tag:root');
       
-      //$this->root->appendChild ($entry);
+      $this->root->appendChild ($entry);
       
     }
     
@@ -99,7 +107,7 @@
       if ($this->title)
         $this->root->removeChild ($this->title);
       
-      $this->title = $this->createTitle (trim ($title));
+      $this->title = $this->createTitle ($title);
       $this->root->appendChild ($this->title);
       
     }
@@ -125,7 +133,7 @@
     }
     
     function getType (): string {
-      return 'text/xml';
+      return 'application/atom+xml';
     }
     
   }
