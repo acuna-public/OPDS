@@ -38,9 +38,9 @@
       
       $this->root = $this->dom->appendChild ($this->root);
       
-      $entry = $this->dom->createElement ('id', 'tag:root');
+      //$entry = $this->dom->createElement ('id', 'tag:root');
       
-      $this->root->appendChild ($entry);
+      //$this->root->appendChild ($entry);
       
     }
     
